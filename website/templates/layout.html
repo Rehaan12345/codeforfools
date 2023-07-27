@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <link rel="icon" type="image/x-icon" href="../static/images/logo/logo.jpeg">
+    <title>{% block title %}Home Page{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../static/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    {% block style %} {% endblock %}
+</head> 
+
+    {% if name == "python" %}
+
+        <nav>
+            <ul id="header" class="nav">
+                <li><a class="navlink" href="/">Home</a></li>
+                {% if user.is_authenticated %}
+                <li><a class="navlink" href="/python/intro">Introduction</a></li>
+                <li><a class="navlink" href="/python/variables">Variables</a></li>
+                <li><a class="navlink" href="/python/numeric">Numerics</a></li>
+                <li><a class="navlink" href="/python/string">Strings</a></li>
+                <li><a class="navlink" href="/python/list">Lists</a></li>
+                <li><a class="navlink" href="/python/tuple">Tuples</a></li>
+                <li><a class="navlink" href="/python/dictionary">Dictionaries</a></li>
+                <li><a class="navlink" href="/python/set">Sets</a></li>
+                <li><a class="navlink" href="/python/conversion">Conversions</a></li>
+                <li><a class="navlink" href="/python/summary">Summary</a></li>
+                <li><a class="navlink" href="/logout">Logout</a></li>
+                {% else %}
+                <li><a class="navlink" href="/python/intro">Introduction</a></li>
+                <li><a class="navlink" href="/python/variables">Variables</a></li>
+                <li><a class="navlink" href="/python/numeric">Numerics</a></li>
+                <li><a class="navlink" href="/python/string">Strings</a></li>
+                <li><a class="navlink" href="/python/list">Lists</a></li>
+                <li><a class="navlink" href="/python/tuple">Tuples</a></li>
+                <li><a class="navlink" href="/python/dictionary">Dictionaries</a></li>
+                <li><a class="navlink" href="/python/set">Sets</a></li>
+                <li><a class="navlink" href="/python/conversion">Conversions</a></li>
+                <li><a class="navlink" href="/python/summary">Summary</a></li>
+                <li><a class="navlink" href="/login">Login</a></li>
+                <li><a class="navlink" href="/signup">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+    {% elif name == "c" %}
+
+    <nav>
+        <ul id="cbanner" class="nav">
+            <li><a href="/">Home</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="/c/intro">Introduction</a></li>
+            <li><a href="/c/variables">Variables</a></li>
+            <li><a href="/c/operators">Operators</a></li>
+            <li><a href="/c/controlflow">Control Flow</a></li>
+            <li><a href="/c/arrays">Arrays and Strings</a></li>
+            <li><a href="/c/pointers">Pointers</a></li>
+            <li><a href="/c/functions">Functions</a></li>
+            <li><a href="/c/structures">Structures</a></li>
+            <li><a href="/c/files">File Handling</a></li>
+            <li><a href="/c/summary">Summary</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/c/intro">Introduction</a></li>
+            <li><a href="/c/variables">Variables</a></li>
+            <li><a href="/c/operators">Operators</a></li>
+            <li><a href="/c/controlflow">Control Flow</a></li>
+            <li><a href="/c/arrays">Arrays and Strings</a></li>
+            <li><a href="/c/pointers">Pointers</a></li>
+            <li><a href="/c/functions">Functions</a></li>
+            <li><a href="/c/structures">Structures</a></li>
+            <li><a href="/c/files">File Handling</a></li>
+            <li><a href="/c/summary">Summary</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% elif name == "java" %}
+
+    <nav>
+        <ul id="javabanner" class="nav">
+            <li><a href="/">Home</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="/java/intro">Introduction</a></li>
+            <li><a href="/java/variables">Variables</a></li>
+            <li><a href="/java/operators">Operators</a></li>
+            <li><a href="/java/controlflow">Control Flow</a></li>
+            <li><a href="/java/arrays">Arrays and Strings</a></li>
+            <li><a href="/java/oop">Object-Oriented Programming</a></li>
+            <li><a href="/java/classes">Classes</a></li>
+            <li><a href="/java/inheritance">Inheritance</a></li>
+            <li><a href="/java/exceptions">Exceptions</a></li>
+            <li><a href="/java/summary">Summary</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/java/intro">Introduction</a></li>
+            <li><a href="/java/variables">Variables</a></li>
+            <li><a href="/java/operators">Operators</a></li>
+            <li><a href="/java/controlflow">Control Flow</a></li>
+            <li><a href="/java/arrays">Arrays and Strings</a></li>
+            <li><a href="/java/oop">Object-Oriented Programming</a></li>
+            <li><a href="/java/classes">Classes</a></li>
+            <li><a href="/java/inheritance">Inheritance</a></li>
+            <li><a href="/java/exceptions">Exceptions</a></li>
+            <li><a href="/java/summary">Summary</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% elif name == "main" or name == "auth" %}
+
+    <nav>
+        <ul id="mainhomebanner" class="nav">
+            {% if user.is_authenticated %}
+            <li><a href="/">Home</a></li>
+            <li><a href="/python/intro">Learn Python</a></li>
+            <li><a href="/c/intro">Learn C</a></li>
+            <li><a href="/java/intro">Learn Java</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/">Home</a></li>
+            <li><a href="/python/intro">Learn Python</a></li>
+            <li><a href="/c/intro">Learn C</a></li>
+            <li><a href="/java/intro">Learn Java</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% endif %}
+ 
+    <body>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            {% if category == "error" %}
+
+            <div class="alert show"> 
+                <span class="msg">{{ message }}</span>
+                <button class="btn-close">
+                    <span>&times;</span>
+                </button>
+
+                <script>
+
+                    $('.btn-close').click(function(){
+                        $('.alert').removeClass("show");
+                        $('.alert').addClass("hide");
+                    });
+
+                    setTimeout(function(){
+                        $(".alert").removeClass("show");
+                        $(".alert").addClass("hide");
+                    }, 5000);
+
+                </script>
+
+            </div>
+
+            {% else %}
+
+            <div class="success show">
+                <span class="msg"> {{ message }} </span>
+                <button class="btn-close">
+                    <span>&times;</span>
+                </button>
+            </div>
+
+            <script>
+
+                $('.btn-close').click(function(){
+                    $('.success').removeClass("show");
+                    $('.success').addClass("hide");
+                });
+
+                setTimeout(function(){
+                    $(".success").removeClass("show");
+                    $(".success").addClass("hide");
+                }, 5000);
+
+            </script>
+
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+    {% block body %}{% endblock %}
+
+    {% if name != "auth" %}
+
+    <div class="footer">
+
+        <h5>
+            Author: Rehaan Anjaria
+            <br><br>
+            Contact: rehaana787@gmail.com 
+            <br><br>
+            Please not that all of the information listed in all of the blog posts were AI-generated. If any of the information is wrong or misleading please let me know via the email above. Thanks and enjoy!
+        </h5>
+
+        <style>
+            .footer {
+                background-color: black;
+                width: 100%;
+                height: 25vh;
+                color: white;
+            }
+
+            .footer h5 {
+                padding: 5vh;
+            }
+        </style>
+
+    </div>
+
+    {% endif %}
+        
+    </body>
+</html>

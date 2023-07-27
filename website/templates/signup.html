@@ -1,0 +1,32 @@
+{% extends "layout.html" %} 
+
+{% block title %}Sign Up{% endblock %} 
+
+{% block body %}
+
+    <div class="center">
+        <h1>Sign Up</h1>
+        <form method="POST" id="login-form">
+            <div class="txt_field">
+                <input type="text" id="email" name="email" required>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" id="username" name="username" required>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" id="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" id="confirm-password" name="confirm-password" required>
+                <label>Confirm Password</label>
+            </div>
+            <input type="submit" value="Sign Up">
+            <div class="signup_link">
+            </div>
+        </form>
+    </div>
+    
+{% endblock %}

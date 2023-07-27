@@ -1,0 +1,26 @@
+{% extends "layout.html" %} 
+
+{% block title %}Login{% endblock %} 
+
+{% block body %}
+
+    <div class="center">
+        <h1>Login</h1>
+        <form method="POST" id="login-form">
+            <div class="txt_field">
+                <input type="text" id="email" name="email" required>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" id="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <input type="submit" value="Login">
+            <div class="signup_link">
+                Not a member? <a href="/signup">Sign Up</a>
+            </div> 
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
