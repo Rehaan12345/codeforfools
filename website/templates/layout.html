@@ -130,6 +130,7 @@
         </ul>
         <ul id="mainhomebanner" class="nav">
             {% if user.is_authenticated %}
+            <li><a href="#">Logged in as {{ current_user.email }}</a></li>
             <li><a href="/logout">Logout</a></li>
             {% else %}
             <li><a href="/login">Login</a></li>
