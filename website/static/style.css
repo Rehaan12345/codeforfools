@@ -291,19 +291,13 @@ label #cancel {
 #check:checked ~ body {
     margin-left: 200px;
     transition: all .5s;
-}
-
-/* .mainimg {
-    background-image: url(../static/images/header-images/mainheader1.jpeg);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+} 
 
 nav {
-    background: #0082e6;
+    background: #174f81;
     list-style-type: none;
+    display: flex;
+    justify-content: space-between;
 }
 
 nav ul { 
@@ -323,6 +317,7 @@ nav ul li {
     background: linear-gradient(120deg, #2980b9, #8e44ad)
 }
 
+/* Login Styling: */
 .center {
     position: absolute;
     top: 50%;
