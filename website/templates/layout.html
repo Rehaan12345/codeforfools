@@ -8,9 +8,9 @@
     <link rel="icon" type="image/x-icon" href="../static/images/logo/logo.jpeg">
     <title>{% block title %}Home Page{% endblock %}</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="../static/script.js"></script>
+    <script src="../static/script.js" type="module"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    {% block style %} {% endblock %}
+    {% block style %}{% endblock %}
 </head> 
 
     {% if name == "python" %}
@@ -47,6 +47,8 @@
             </ul>
         </nav>
 
+        <div class="scrolltracker"></div>
+
     {% elif name == "c" %}
 
     <nav>
@@ -80,6 +82,8 @@
             {% endif %}
         </ul>
     </nav>
+
+    <div class="scrolltracker"></div>
 
     {% elif name == "java" %}
 
@@ -115,6 +119,8 @@
         </ul>
     </nav>
 
+    <div class="scrolltracker"></div>
+
     {% elif name == "main" or name == "auth" %}
 
     <nav>
@@ -138,6 +144,7 @@
     {% endif %}
  
     <body>
+
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
@@ -204,7 +211,7 @@
             <br><br>
             Contact: rehaana787@gmail.com 
             <br><br>
-            Please not that all of the information listed in all of the blog posts were AI-generated. If any of the information is wrong or misleading please let me know via the email above. Thanks and enjoy!
+            Please note that all of the information listed in all of the blog posts were AI-generated. If any of the information is wrong or misleading please let me know via the email above. Thanks and enjoy!
         </h5>
 
         <style>

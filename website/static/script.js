@@ -1,3 +1,6 @@
+// For the scroll animations: 
+import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
+
 // Adding the active class to the buttons that have already been clicked: 
 const navLink = document.querySelectorAll(".navlink ");
 navLink.forEach(navLink => {
@@ -21,3 +24,24 @@ const observer = new IntersectionObserver((entries) => {
 
 const animatehidden = document.querySelectorAll(".animate-hidden");
 animatehidden.forEach((el) => observer.observe(el));
+
+// Scroll animations: 
+window.addEventListener("DOMContentLoaded", () =>  {
+    const scrollTracker = document.querySelector(".scrolltracker"); 
+
+    const scrolleTrackingTimeline = new ScrollTimeline({
+        source: document.scrollingElement,
+        scrollOffsets: [CSS.percent(0), CSS.percent(100)]
+    });
+    
+    scrollTracker.animate(
+        {
+            transform: ["scaleX(0)", "scaleX(1)"]
+        },
+        {
+            duration: 1,
+            timeline: scrolleTrackingTimeline
+        }
+    )
+});
+
