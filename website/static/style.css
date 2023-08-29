@@ -1,3 +1,10 @@
+:root {
+    --margintop: 10px;
+    --marginright: 30%;
+    --marginleft: 30%;
+    --marginbottom: 10px;
+}
+
 * {
     margin-top: 0px;
 }
@@ -216,31 +223,31 @@ h1 {
 }
 
 p {
-    margin-top: 10px;
-    margin-right: 35%;
-    margin-left: 35%;
-    margin-bottom: 10px;
+    margin-top: var(--margintop);
+    margin-right: var(--marginright);
+    margin-left: var(--marginleft);
+    margin-bottom: var(--marginbottom);
 } 
 
 ul {
-    margin-top: 10px;
-    margin-right: 35%;
-    margin-left: 35%;
-    margin-bottom: 10px;
+    margin-top: var(--margintop);
+    margin-right: var(--marginright);
+    margin-left: var(--marginleft);
+    margin-bottom: var(--marginbottom);
 }
 
 ol {
-    margin-top: 10px;
-    margin-right: 35%;
-    margin-left: 35%;
-    margin-bottom: 10px;
+    margin-top: var(--margintop);
+    margin-right: var(--marginright);
+    margin-left: var(--marginleft);
+    margin-bottom: var(--marginbottom);
 }
 
 h3 {
-    margin-top: 10px;
-    margin-right: 35%;
-    margin-left: 35%;
-    margin-bottom: 10px;
+    margin-top: var(--margintop);
+    margin-right: var(--marginright);
+    margin-left: var(--marginleft);
+    margin-bottom: var(--marginbottom);
 }
 
 #check {
@@ -483,4 +490,23 @@ code {
     height: 0.5rem;
     background-color: #0008ff;
     transform-origin: left;
+}
+
+/* Size adjustments: */
+@media screen and (max-width: 1236px) {
+    :root {
+        --margintop: 10px;
+        --marginright: 25%;
+        --marginleft: 25%;
+        --marginbottom: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --margintop: 20px;
+        --marginright: 10%;
+        --marginleft: 10%;
+        --marginbottom: 20px;
+    }
 }
