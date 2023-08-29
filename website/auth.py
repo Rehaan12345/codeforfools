@@ -3,8 +3,17 @@ from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash 
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
+import git
 
 auth = Blueprint("auth", __name__) # An "auth" blueprint for the Flask application
+
+@auth.route("/git_update", methods=["POST"])
+def git_update():
+    repo = git.Repo("./codeforfools")
+    origin = repo.remotes.origin
+    repo.create_head("main", origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+    origin.pull()
+    return "", 200
 
 @auth.route("/login", methods=["GET", "POST"]) 
 def login():
