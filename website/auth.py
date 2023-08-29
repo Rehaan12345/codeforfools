@@ -9,7 +9,7 @@ auth = Blueprint("auth", __name__) # An "auth" blueprint for the Flask applicati
 
 @auth.route("/git_update", methods=["POST"])
 def git_update():
-    repo = git.Repo("./codeforfools")
+    repo = git.Repo("./codeforfools.git")
     origin = repo.remotes.origin
     repo.create_head("main", origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
     origin.pull()
