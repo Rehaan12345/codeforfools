@@ -503,7 +503,7 @@ code {
 }
 
 @media screen and (max-width: 500px) {
-    :root {
+    :root { 
         --margintop: 20px;
         --marginright: 10%;
         --marginleft: 10%;
