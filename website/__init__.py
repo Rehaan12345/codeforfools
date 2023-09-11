@@ -2,9 +2,13 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path 
 from flask_login import LoginManager 
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
+
+admin = Admin()
 
 def create_app():
     app = Flask(__name__)
@@ -29,6 +33,9 @@ def create_app():
 
     with app.app_context():
         db.create_all()
+        admin.init_app(app)
+
+    admin.add_view(ModelView(User, db.session))
 
     login_manager = LoginManager()
     login_manager.login_view = "auth.login" # Where the user goes if they're not logged in. 
