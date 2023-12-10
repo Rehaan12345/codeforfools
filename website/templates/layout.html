@@ -13,16 +13,6 @@
     {% block style %}{% endblock %}
 </head> 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E7KZWL4CES"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-E7KZWL4CES');
-</script>
-
     {% if name == "python" %}
 
         <nav>
@@ -154,6 +144,17 @@
     {% endif %}
  
     <body>
+
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7KZWL4CES"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-E7KZWL4CES');
+        </script>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
